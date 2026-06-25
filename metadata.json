@@ -1,0 +1,6 @@
+{
+  "name": "OFFINSO PRIVATE HUB",
+  "description": "A private, resident-created community & business connection hub for Offinso (Ghana), connecting residents to jobs, private relief support, local community auctions, and private service details using Cedis (GH₵).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Vibrant Palette - Deep Teal Branding */
+  --color-offinso-green-950: #00221c;
+  --color-offinso-green-900: #003730;
+  --color-offinso-green-800: #004d44; /* Vibrant Deep Teal */
+  --color-offinso-green-700: #005f54;
+  --color-offinso-green-600: #007366;
+  --color-offinso-green-500: #008f7e;
+  --color-offinso-green-100: #e0f2f1;
+  --color-offinso-green-50: #f0faf9;
+  
+  /* Vibrant Palette - Calypso Yellow/Gold */
+  --color-offinso-gold: #efbf12; /* Vibrant Gold/Yellow */
+  --color-offinso-gold-hover: #d4a70b;
+  --color-offinso-gold-light: #fef9c3; /* Soft Light Yellow */
+  
+  /* Vibrant Palette - Royal Dark Blue (Replaces old red soil dirt in primary structures) */
+  --color-offinso-dirt-dark: #003f63;
+  --color-offinso-dirt: #005d91; /* Vibrant Dark Blue */
+  --color-offinso-dirt-light: #e0f2fe;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 font-sans antialiased transition-colors duration-300;
+  }
+  
+  html.dark body {
+    @apply bg-offinso-green-950 text-zinc-100;
+  }
+
+  /* Structural dark theme high-contrast rules utilizing existing color variables */
+  html.dark #offinso-portal-header {
+    background-color: var(--color-offinso-green-950) !important;
+    border-color: var(--color-offinso-green-800) !important;
+  }
+
+  html.dark #offinso-portal-header .bg-white {
+    background-color: var(--color-offinso-green-950) !important;
+  }
+
+  html.dark .bg-white:not(.keep-white) {
+    background-color: var(--color-offinso-green-900) !important;
+    color: #f4f4f5 !important;
+  }
+
+  html.dark .bg-zinc-50 {
+    background-color: var(--color-offinso-green-950) !important;
+  }
+
+  html.dark .bg-zinc-100 {
+    background-color: rgba(0, 77, 68, 0.45) !important;
+  }
+
+  html.dark .text-zinc-900,
+  html.dark .text-gray-900,
+  html.dark .text-slate-900,
+  html.dark .text-zinc-950 {
+    color: #ffffff !important;
+  }
+
+  html.dark .text-zinc-700,
+  html.dark .text-zinc-800,
+  html.dark .text-gray-750,
+  html.dark .text-gray-700 {
+    color: #e4e4e7 !important;
+  }
+
+  html.dark .text-zinc-500,
+  html.dark .text-zinc-650,
+  html.dark .text-zinc-600,
+  html.dark .text-gray-500 {
+    color: #a1a1aa !important;
+  }
+
+  html.dark .border-zinc-200,
+  html.dark .border-zinc-300,
+  html.dark .border-gray-200,
+  html.dark .border-zinc-100 {
+    border-color: var(--color-offinso-green-800) !important;
+  }
+
+  html.dark input,
+  html.dark textarea,
+  html.dark select {
+    background-color: rgba(0, 22, 17, 0.8) !important;
+    border-color: var(--color-offinso-green-800) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark .bg-offinso-gold-light {
+    background-color: rgba(239, 191, 18, 0.1) !important;
+  }
+
+  html.dark .text-offinso-gold-hover {
+    color: #fef9c3 !important;
+  }
+
+  html.dark .text-zinc-650 {
+    color: #d1d5db !important;
+  }
+}
+
+/* Scrollbar tweaks */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #004d44;
+  border-radius: 4px;
+}
